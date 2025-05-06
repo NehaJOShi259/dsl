@@ -1,12 +1,10 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 struct Student {
     int rollno;
     int marks;
     int chain;
-    bool occupied;
 };
 
 int hashFunction(int key) {
@@ -15,26 +13,28 @@ int hashFunction(int key) {
 
 void insert(Student table[], int rollno, int marks) {
     int index = hashFunction(rollno);
-    if (!table[index].occupied) {
-        table[index] = {rollno, marks, -1, true};
+    if (table[index].rollno == -1) {
+        table[index].rollno = rollno;
+        table[index].marks = marks;
+        table[index].chain = -1;
         return;
     }
-    int original = index;
-    while (table[index].occupied) {
+
+    int start = index;
+    while (table[index].rollno != -1) {
         index = (index + 1) % 10;
-        if (index == original) return;
+        if (index == start) return;
     }
-    table[index] = {rollno, marks, -1, true};
-    int prev = hashFunction(rollno);
-    while (table[prev].rollno % 10 != rollno % 10 || table[prev].chain != -1)
-        prev = table[prev].chain;
-    table[prev].chain = index;
+
+    table[index].rollno = rollno;
+    table[index].marks = marks;
+    table[index].chain = -1;
 }
 
 void display(Student table[]) {
     cout << "Index\tRollNo\tMarks\tChain\n";
     for (int i = 0; i < 10; i++) {
-        if (table[i].occupied)
+        if (table[i].rollno != -1)
             cout << i << "\t" << table[i].rollno << "\t" << table[i].marks << "\t" << table[i].chain << "\n";
         else
             cout << i << "\t---\t---\t---\n";
@@ -43,11 +43,20 @@ void display(Student table[]) {
 
 int main() {
     Student table[10];
-    for (int i = 0; i < 10; i++) table[i] = {-1, -1, -1, false};
+    for (int i = 0; i < 10; i++) {
+        table[i].rollno = -1;
+        table[i].marks = -1;
+        table[i].chain = -1;
+    }
 
-    vector<pair<int, int>> students = {{31, 85}, {13, 78}, {14, 90}, {51, 72}, {16, 88}, {71, 65}, {48, 91}, {19, 69}};
-    for (auto s : students) insert(table, s.first, s.second);
+    int rollnos[] = {31, 13, 14, 51, 16, 71, 48, 19};
+    int marks[] = {85, 78, 90, 72, 88, 65, 91, 69};
+
+    for (int i = 0; i < 8; i++) {
+        insert(table, rollnos[i], marks[i]);
+    }
 
     display(table);
     return 0;
 }
+
