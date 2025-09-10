@@ -1,0 +1,251 @@
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("37a4aaad-1247-456f-8cc4-caa60a1beb5c") }
+MongoDB server version: 3.6.8
+2. All student documents:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+		"name" : "Geeta",
+		"marks" : 85,
+		"cgpa" : 8.5,
+		"branch" : "Electronics",
+		"city" : "Pune"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffada"),
+		"name" : "Vikram",
+		"marks" : 82,
+		"cgpa" : 8,
+		"branch" : "Civil",
+		"city" : "Bangalore"
+	},
+	{
+		"_id" : ObjectId("68c11ff15d9d83cfb09b1243"),
+		"name" : "Amit",
+		"roll" : 101,
+		"prn" : "PRN001",
+		"branch" : "Computer",
+		"marks" : {
+			"TOC" : 85,
+			"DBMS" : 78,
+			"OS" : 90
+		}
+	},
+	{
+		"_id" : ObjectId("68c11ff15d9d83cfb09b1244"),
+		"name" : "Nina",
+		"roll" : 102,
+		"prn" : "PRN002",
+		"branch" : "IT",
+		"marks" : {
+			"TOC" : 88,
+			"DBMS" : 82,
+			"OS" : 79
+		}
+	},
+	{
+		"_id" : ObjectId("68c11ff15d9d83cfb09b1245"),
+		"name" : "Ravi",
+		"roll" : 103,
+		"prn" : "PRN003",
+		"branch" : "Computer",
+		"marks" : {
+			"TOC" : 92,
+			"DBMS" : 76,
+			"OS" : 85
+		}
+	},
+	{
+		"_id" : ObjectId("68c11ff15d9d83cfb09b1246"),
+		"name" : "Simran",
+		"roll" : 104,
+		"prn" : "PRN004",
+		"branch" : "IT",
+		"marks" : {
+			"TOC" : 70,
+			"DBMS" : 91,
+			"OS" : 88
+		}
+	},
+	{
+		"_id" : ObjectId("68c11ff15d9d83cfb09b1247"),
+		"name" : "John",
+		"roll" : 105,
+		"prn" : "PRN005",
+		"branch" : "Mechanical",
+		"marks" : {
+			"TOC" : 67,
+			"DBMS" : 72,
+			"OS" : 69
+		}
+	}
+]
+3. Strength of students per branch:
+[
+	{
+		"_id" : "IT",
+		"count" : 2
+	},
+	{
+		"_id" : "Electronics",
+		"count" : 1
+	},
+	{
+		"_id" : "Mechanical",
+		"count" : 2
+	},
+	{
+		"_id" : "Civil",
+		"count" : 1
+	},
+	{
+		"_id" : "Computer",
+		"count" : 4
+	}
+]
+4. Branch-wise TOC toppers:
+[
+	{
+		"_id" : "Electronics",
+		"topper" : {
+			"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+			"name" : "Geeta",
+			"marks" : 85,
+			"cgpa" : 8.5,
+			"branch" : "Electronics",
+			"city" : "Pune"
+		}
+	},
+	{
+		"_id" : "Mechanical",
+		"topper" : {
+			"_id" : ObjectId("68c11ff15d9d83cfb09b1247"),
+			"name" : "John",
+			"roll" : 105,
+			"prn" : "PRN005",
+			"branch" : "Mechanical",
+			"marks" : {
+				"TOC" : 67,
+				"DBMS" : 72,
+				"OS" : 69
+			}
+		}
+	},
+	{
+		"_id" : "IT",
+		"topper" : {
+			"_id" : ObjectId("68c11ff15d9d83cfb09b1244"),
+			"name" : "Nina",
+			"roll" : 102,
+			"prn" : "PRN002",
+			"branch" : "IT",
+			"marks" : {
+				"TOC" : 88,
+				"DBMS" : 82,
+				"OS" : 79
+			}
+		}
+	},
+	{
+		"_id" : "Civil",
+		"topper" : {
+			"_id" : ObjectId("68c11c9c8d19c777866ffada"),
+			"name" : "Vikram",
+			"marks" : 82,
+			"cgpa" : 8,
+			"branch" : "Civil",
+			"city" : "Bangalore"
+		}
+	},
+	{
+		"_id" : "Computer",
+		"topper" : {
+			"_id" : ObjectId("68c11ff15d9d83cfb09b1245"),
+			"name" : "Ravi",
+			"roll" : 103,
+			"prn" : "PRN003",
+			"branch" : "Computer",
+			"marks" : {
+				"TOC" : 92,
+				"DBMS" : 76,
+				"OS" : 85
+			}
+		}
+	}
+]
+5. Max marks in each subject:
+[ { "_id" : null, "maxTOC" : 92, "maxDBMS" : 91, "maxOS" : 90 } ]
+6. Average marks of each subject:
+[
+	{
+		"_id" : null,
+		"avgTOC" : 80.4,
+		"avgDBMS" : 79.8,
+		"avgOS" : 82.2
+	}
+]
+7. Student with min TOC marks:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	}
+]
+8. Indexes created on roll and PRN
+9. All indexes:
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "test.student"
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"roll" : 1
+		},
+		"name" : "roll_1",
+		"ns" : "test.student"
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"prn" : 1
+		},
+		"name" : "prn_1",
+		"ns" : "test.student"
+	}
+]
+10. Index on roll dropped
