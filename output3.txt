@@ -1,0 +1,137 @@
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("638eab27-f3cb-4c49-9f40-5e4c16c97802") }
+MongoDB server version: 3.6.8
+All Employees:
+[
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d389"),
+		"name" : "Ram",
+		"empId" : 101,
+		"department" : "Computer",
+		"salary" : 55000.00000000001,
+		"address" : "Bangalore",
+		"dependents" : [
+			"Rita",
+			"Rohan"
+		]
+	},
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d38a"),
+		"name" : "Sita",
+		"empId" : 102,
+		"department" : "Mechanical",
+		"salary" : 48000,
+		"address" : "Pune",
+		"dependents" : [
+			"Mini"
+		]
+	},
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d38b"),
+		"name" : "John",
+		"empId" : 103,
+		"department" : "Computer",
+		"salary" : 57200.00000000001,
+		"address" : "Chennai",
+		"dependents" : [ ]
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f211"),
+		"name" : "Ram",
+		"empId" : 101,
+		"department" : "Computer",
+		"salary" : 50000,
+		"address" : "Delhi",
+		"dependents" : [
+			"Rita",
+			"Rohan"
+		]
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f212"),
+		"name" : "Sita",
+		"empId" : 102,
+		"department" : "Mechanical",
+		"salary" : 48000,
+		"address" : "Pune",
+		"dependents" : [
+			"Mini"
+		]
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f213"),
+		"name" : "John",
+		"empId" : 103,
+		"department" : "Computer",
+		"salary" : 52000,
+		"address" : "Chennai",
+		"dependents" : [ ]
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f214"),
+		"name" : "Leena",
+		"empId" : 104,
+		"department" : "Civil",
+		"salary" : 47000,
+		"address" : "Mumbai",
+		"dependents" : [
+			"Karan",
+			"Meena"
+		]
+	}
+]
+Salaries updated for Computer department
+Address of Ram updated
+Leena deleted
+Highest salary in Mechanical department:
+[
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d38a"),
+		"name" : "Sita",
+		"empId" : 102,
+		"department" : "Mechanical",
+		"salary" : 48000,
+		"address" : "Pune",
+		"dependents" : [
+			"Mini"
+		]
+	}
+]
+Number of dependents for each employee:
+[
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d389"),
+		"name" : "Ram",
+		"dependentsCount" : 2
+	},
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d38a"),
+		"name" : "Sita",
+		"dependentsCount" : 1
+	},
+	{
+		"_id" : ObjectId("68c12090d36b3803a672d38b"),
+		"name" : "John",
+		"dependentsCount" : 0
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f211"),
+		"name" : "Ram",
+		"dependentsCount" : 2
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f212"),
+		"name" : "Sita",
+		"dependentsCount" : 1
+	},
+	{
+		"_id" : ObjectId("68c1214b08d0c7f71931f213"),
+		"name" : "John",
+		"dependentsCount" : 0
+	}
+]
+Total number of employees:
+2025-09-10T12:27:15.527+0530 E QUERY    [thread1] TypeError: db.employee.countDocuments is not a function :
+@assignment12.js:85:11
+failed to load: assignment12.js
