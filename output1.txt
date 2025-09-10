@@ -1,0 +1,223 @@
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("b052592b-310c-41e7-a08d-a85cafe4b622") }
+MongoDB server version: 3.6.8
+2. All students:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 95,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad6"),
+		"name" : "Sita",
+		"marks" : 78,
+		"cgpa" : 7,
+		"branch" : "IT",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+		"name" : "Geeta",
+		"marks" : 85,
+		"cgpa" : 8.5,
+		"branch" : "Electronics",
+		"city" : "Pune"
+	}
+]
+3. After updating Ram's marks:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	}
+]
+4. Students with CGPA 9 or branch Computer:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	}
+]
+5. Students NOT in branch IT:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+		"name" : "Geeta",
+		"marks" : 85,
+		"cgpa" : 8.5,
+		"branch" : "Electronics",
+		"city" : "Pune"
+	}
+]
+6. Students with CGPA 7 and city Mumbai:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad6"),
+		"name" : "Sita",
+		"marks" : 78,
+		"cgpa" : 7,
+		"branch" : "IT",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	}
+]
+7. Students NOT having CGPA 9 or branch Computer:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad6"),
+		"name" : "Sita",
+		"marks" : 78,
+		"cgpa" : 7,
+		"branch" : "IT",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+		"name" : "Geeta",
+		"marks" : 85,
+		"cgpa" : 8.5,
+		"branch" : "Electronics",
+		"city" : "Pune"
+	}
+]
+8. After adding Vikram:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffada"),
+		"name" : "Vikram",
+		"marks" : 82,
+		"cgpa" : 8,
+		"branch" : "Civil",
+		"city" : "Bangalore"
+	}
+]
+9. After removing Sita:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad5"),
+		"name" : "Ram",
+		"marks" : 98,
+		"cgpa" : 9,
+		"branch" : "Computer",
+		"city" : "Delhi"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad8"),
+		"name" : "Ravi",
+		"marks" : 70,
+		"cgpa" : 7,
+		"branch" : "Mechanical",
+		"city" : "Mumbai"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad9"),
+		"name" : "Geeta",
+		"marks" : 85,
+		"cgpa" : 8.5,
+		"branch" : "Electronics",
+		"city" : "Pune"
+	},
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffada"),
+		"name" : "Vikram",
+		"marks" : 82,
+		"cgpa" : 8,
+		"branch" : "Civil",
+		"city" : "Bangalore"
+	}
+]
+10. Student with highest CGPA in Computer branch:
+[
+	{
+		"_id" : ObjectId("68c11c9c8d19c777866ffad7"),
+		"name" : "Anita",
+		"marks" : 88,
+		"cgpa" : 9.5,
+		"branch" : "Computer",
+		"city" : "Chennai"
+	}
+]
